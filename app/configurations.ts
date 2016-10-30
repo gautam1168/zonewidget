@@ -1,8 +1,8 @@
 export class ZoneConf{
-  start: string;
-  end: string;
-  x: string;
-  width: string;
+  start: number;
+  end: number;
+  x: number;
+  width: number;
   fill: string;
 }
 
@@ -14,6 +14,7 @@ export class DonutConf{
   fill: string;
   centerfill: string;
   arclength: number;
+  strokecolor: string;
 }
 
 export class Configuration{

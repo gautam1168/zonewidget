@@ -15,22 +15,23 @@ import { ZoneConf, DonutConf, Configuration } from './configurations';
 	    	`
 })
 export class AppComponent implements OnInit{
+  bgcolor: string = "#202022";
   dconf: DonutConf = {
                         x: "50", y: "50", r1: "25", r2: "35",
-                        fill: "white", centerfill: "crimson",
-                        arclength: 270
+                        fill: "white", centerfill: this.bgcolor, //"#00444E",
+                        arclength: 270, strokecolor: "#82EAAF"
                      }
   zconf: ZoneConf[] = [
-                        {start: "0", end: "20", x: "100", width: "90", fill: "white"},
-                        {start: "21", end: "40", x: "100", width: "90", fill: "white"},
-                        {start: "41", end: "60", x: "100", width: "90", fill: "white"},
-                        {start: "61", end: "80", x: "100", width: "90", fill: "white"},
-                        {start: "81", end: "100", x: "100", width: "90", fill: "white"}
+                        {start: 0,  end: 20,  x: 100, width: 99, fill: "#009581"},
+                        {start: 21, end: 40,  x: 100, width: 99, fill: "#00B28C"},
+                        {start: 41, end: 60,  x: 100, width: 99, fill: "#00CA86"},
+                        {start: 61, end: 80,  x: 100, width: 99, fill: "#82EAAF"},
+                        {start: 81, end: 100, x: 100, width: 99, fill: "#C3FFBD"}
                       ]
   conf: Configuration = {
                           width: "800",
                           height: "410",
-                          bgcolor: "crimson",
+                          bgcolor: this.bgcolor, //"#00444E",
                           viewbox: "0 0 200 100"
                         }
   ngOnInit(): void{

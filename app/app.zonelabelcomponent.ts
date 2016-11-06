@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { ZoneConf } from './configurations';
+import { Component, Input, OnInit } from '@angular/core';
+import { ZoneConf, DeltaConf } from './configurations';
 
 @Component({
   selector: '[zone-label]',
@@ -15,9 +15,19 @@ import { ZoneConf } from './configurations';
                         font-size="10" fill="white">
                         {{conf.start}}%-{{conf.end}}%
              </svg:text>
+             <svg:g delta-component [conf]="deltaconf"></svg:g>
              `
 })
-export class ZoneLabelComponent{
+export class ZoneLabelComponent implements OnInit{
   @Input()
   rectconfs: ZoneConf[];
+
+  deltaconf: DeltaConf;
+
+  ngOnInit():void {
+    this.deltaconf = {
+                      start: 30, end: 50,
+                      xpos: this.rectconfs[0].x + this.rectconfs[0].width - 25
+                     }
+  }
 }

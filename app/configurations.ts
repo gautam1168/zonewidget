@@ -1,3 +1,9 @@
+export class DeltaConf{
+  start: number;
+  end: number;
+  xpos: number;
+}
+
 export class ZoneConf{
   start: number;
   end: number;

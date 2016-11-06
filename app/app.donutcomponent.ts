@@ -15,13 +15,15 @@ import { DonutConf } from './configurations';
              <svg:text [attr.x]="textXcoord"
                        [attr.y]="textYcoord" font-family="Verdana"
                         font-size="15" fill="white">
-                        {{conf.arclength/3.6}}%
+                        {{floor(conf.arclength/3.6)}}%
              </svg:text>
              `
 })
 export class DonutComponent implements OnInit{
   @Input()
   conf: DonutConf;
+
+  floor = Math.floor;
 
   path: string;
   textXcoord: number;

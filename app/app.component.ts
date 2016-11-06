@@ -3,7 +3,7 @@ import { ZoneConf, DonutConf, Configuration } from './configurations';
 
 @Component({
   selector: 'my-app',
-  template: `<h1>My First Angular App {{metervalue}} fs</h1>
+  template: `<h1>My First Angular App</h1>
 	  		<div>
 				    <svg attr.width={{conf.width}} attr.height={{conf.height}}
                   [attr.viewBox]="conf.viewbox"
@@ -12,7 +12,15 @@ import { ZoneConf, DonutConf, Configuration } from './configurations';
                   <g zone-label [rectconfs]="zconf"></g>
 				    </svg>
 	     	</div>
-	    	`
+        <div class="formcontainer">
+          <widget-controls [conf]="dconf"></widget-controls>
+        </div>
+	    	`,
+   styles: [`
+              .formcontainer{
+                padding: 20px;
+              }
+           `]
 })
 export class AppComponent implements OnInit{
 
@@ -20,7 +28,7 @@ export class AppComponent implements OnInit{
   dconf: DonutConf = {
                         x: "50", y: "50", r1: "25", r2: "35",
                         fill: "white", centerfill: this.bgcolor, //"#00444E",
-                        arclength: 60, strokecolor: "#82EAAF"
+                        arclength: 120, strokecolor: "#82EAAF"
                      }
   zconf: ZoneConf[] = [
                         {start: 0,  end: 20,  x: 100, width: 99, fill: "#009581"},

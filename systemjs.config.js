@@ -12,6 +12,8 @@
     map: {
       // our app is within the app folder
       app: 'app',
+      // another app is in divdrawer folder
+      divdrawer: 'divdrawer',
       // angular bundles
       '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
       '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
@@ -36,6 +38,10 @@
       },
       'angular-in-memory-web-api': {
         main: './index.js',
+        defaultExtension: 'js'
+      },
+      divdrawer: {
+        main: './main.js',
         defaultExtension: 'js'
       }
     }
